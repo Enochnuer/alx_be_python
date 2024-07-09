@@ -1,21 +1,15 @@
 def perform_operation(num1, num2, operation):
-    num1 = float(input("Enter the first number:"))
-    num2 = float(input("Enter the second number:"))
-    operation =input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
     match operation:
-        case "add":
-            result = num1 + num2
-            print(f"The result is {result}.")
-        case "subtract":
-            result = num1 - num2
-            print(f"The result is {result}.")
-        case "multiply":
-            result = num1 * num2
-            print(f"The result is {result}.")
-        case "divide":
+        case 'add':
+            return num1 + num2
+        case 'subtract':
+            return num1 - num2
+        case 'multiply':
+            return num1 * num2
+        case 'divide':
             if num2 == 0:
-                print("cannot divide by 0")
-            else:
-                result = num1 / num2
-                print(f"The result is {result}.")
-perform_operation()
+                return "Error: Division by zero is not allowed."
+            elif num2 != 0:
+                return num1 / num2
+        case _:
+            return "Invalid operation. Please choose add, subtract, multiply, or divide."
